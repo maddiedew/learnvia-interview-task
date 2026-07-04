@@ -130,12 +130,10 @@ if st.session_state.submitted:
             st.success(f"🎉 Correct! The limit is **{a}**. Nice work.")
         else:
             st.success(f"🎉 Correct! The limit is **1/{a}**. Nice work.")
-    elif parsed == -correct_answer:
-        st.error(
-        "Close, but not quite — remember √ always means the *non-negative*, or *principal*, "
+    elif parsed == -correct_answer: # special case for the negated answer
+        st.error("Close, but not quite — remember √ always means the *non-negative*, or *principal*, "
         "square root, so the limit can't be negative here. Try again!"
         )
-elif st.session_state.correct:
     else:
         st.error("Not quite right. Try again, or check the explanation below for help.")
     with st.expander("📖 Show explanation"):

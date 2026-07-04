@@ -126,7 +126,7 @@ if submitted:
 if st.session_state.submitted:
     if st.session_state.correct:
         if a == 1: # special case of integer answer
-            st.success(f"🎉 Correct! The limit is **a**. Nice work.")
+            st.success(f"🎉 Correct! The limit is **{a}**. Nice work.")
         else:
             st.success(f"🎉 Correct! The limit is **1/{a}**. Nice work.")
     else:

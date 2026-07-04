@@ -45,8 +45,7 @@ def term(coeff, var=""):
 # Answer parsing
 # ---------------------------------------------------------------------------
 def parse_answer(raw):
-    """Parse student's integer, fraction, or decimal answer string 
-    into a fraction."""
+    """Parse student's answer string into a fraction."""
     stripped_answer = raw.strip().replace(" ", "")
     if not stripped_answer:
         return None
@@ -123,13 +122,12 @@ if submitted:
         st.session_state.submitted = True
         st.session_state.correct = (parsed == correct_answer)
 
-# responses based on student input
+# responses based on student input, including step-by-step explanation
 if st.session_state.submitted:
     if st.session_state.correct:
         st.success(f"🎉 Correct! The limit is **1/{a}**. Nice work.")
     else:
         st.error("Not quite right — give it another try, or check the explanation below for help.")
-
     with st.expander("📖 Show explanation"):
         st.markdown(
             rf"""
@@ -137,12 +135,14 @@ We evaluate:
 
 $$\lim_{{x \to -1}} \sqrt{{\dfrac{{x+1}}{{{denom}}}}}$$
 
-**Step 1 — Direct substitution.**
+**Step 1 — Check for answer via direct substitution.**
 
-At $x=-1$, the numerator $x+1 = -1 + 1 = 0$. Substituting $x=-1$ into the denominator also gives $0$,
-so this is a $\dfrac{{0}}{{0}}$ indeterminate form, which means $(x+1)$ is a factor of the denominator too.
+At $x=-1$, the numerator $x+1 = -1 + 1 = 0$, which means $(x+1)$ is a factor of the numerator. 
 
-**Step 2 — Simplify the expression.**
+Substituting $x=-1$ into the denominator also gives $0$, so this is a $\dfrac{{0}}{{0}}$ 
+indeterminate form, which means $(x+1)$ is a factor of the denominator too.
+
+**Step 2 — Simplify the expression algebraically.**
 
 We can factor the expression as:
 

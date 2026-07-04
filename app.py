@@ -127,7 +127,7 @@ if st.session_state.submitted:
     if st.session_state.correct:
         st.success(f"🎉 Correct! The limit is **1/{a}**. Nice work.")
     else:
-        st.error("Not quite right — give it another try, or check the explanation below for help.")
+        st.error("Not quite right. Try again, or check the explanation below for help.")
     with st.expander("📖 Show explanation"):
         st.markdown(
             rf"""

@@ -148,7 +148,7 @@ We can factor the expression as:
 
 $${denom} = (x+1)(x+{b})$$
 
-Next, cancel the common factor. For $x \neq -1$:
+Next, divide out the common factor. For $x \neq -1$:
 
 $$\frac{{x+1}}{{(x+1)(x+{b})}} = \frac{{1}}{{x+{b}}}$$
 

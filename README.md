@@ -38,7 +38,10 @@ This guarantees every generated problem is a valid, indeterminate limit of the f
 - New random problem on every page load, plus a "New Problem" button to
   generate a new problem without refreshing.
 - Accepts answers as integers, fractions, or decimals.
-- Clear success/error feedback after submitting.
+- Clear success/error feedback after submitting. Potential feedback:
+     - Correct
+     - Incorrect
+     - Reminder of principal square roots for negated answer
 - A collapsible, step-by-step explanation is shown after each
   submission, whether the answer was correct or incorrect.
 

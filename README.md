@@ -5,7 +5,7 @@ A small Streamlit app for practicing limits of the form:
 
 $$\lim_{x \to -1} \sqrt{\dfrac{x+1}{x^2+cx+b}} = \dfrac{1}{a}$$
 
-`b` and `c` are randomized (via a random integer `a`) each time a new
+`b` and `c` are generated (via a random integer `a`) each time a new
 problem is generated, and the app evaluates the student's answer against the
 correct value `1/a`.
 
@@ -23,14 +23,13 @@ Two conditions from the task directions drive the problem generator:
 3. **The limit must simplify to `1/a` for an integer `a`.**
    Taking the limit of the simplified expression:
    `lim_{x→-1} √(1/(x+b)) = √(1/(b-1))`.
-   We will focus on the positive solution, this only equals `1/a` when `a`
+   Since we will focus on the positive solution, this only equals `1/a` when `a`
    is a **positive** integer and `b - 1 = a²`. So:
-   - `a` is randomly chosen from `1` to `8`
+   - `a` is randomly chosen from `1` to `25` (for the sake of reasonable coeff/constants, but this upper bound could be changed)
    - `b = a² + 1`
    - `c = b + 1 = a² + 2`
 
-This guarantees every generated problem is a valid `0/0` limit that
-simplifies to a clean `1/a`.
+This guarantees every generated problem is a valid, indeterminate limit of the form `0/0` that simplifies to `1/a` for some positive integer `a`. The value of a determines the value of `b` and `c`. With the current range of random integers for `a`, there are 25 unique problems that can be generated.
 
 ## Features
 
@@ -38,7 +37,7 @@ simplifies to a clean `1/a`.
   generate a new problem without refreshing.
 - Accepts answers as integers, fractions, or decimals.
 - Clear success/error feedback after submitting.
-- A collapsible, step-by-step explanation shown after each
+- A collapsible, step-by-step explanation is shown after each
   submission, whether the answer was correct or incorrect.
 
 ## File overview

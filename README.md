@@ -14,13 +14,15 @@ correct value `1/a`.
 Two conditions from the task directions drive the problem generator:
 
 1. **The expression under the root must be a `0/0` form at `x = -1`.**
+   
    The numerator `x+1` is already `0` at `x = -1`, so the denominator must be
    `0` at `x = -1` as well:
    `1 - c + b = 0  →  c = b + 1`.
    So, `x² + cx + b` factors as `(x+1)(x+b)`, and the fraction simplifies
    to `1/(x+b)` for `x =/= -1`.
 
-3. **The limit must simplify to `1/a` for an integer `a`.**
+2. **The limit must simplify to `1/a` for an integer `a`.**
+   
    Taking the limit of the simplified expression:
    `lim_{x→-1} √(1/(x+b)) = √(1/(b-1))`.
    Since we will focus on the positive solution, this only equals `1/a` when `a`

@@ -125,7 +125,10 @@ if submitted:
 # responses based on student input, including step-by-step explanation
 if st.session_state.submitted:
     if st.session_state.correct:
-        st.success(f"🎉 Correct! The limit is **1/{a}**. Nice work.")
+        if a == 1: # special case of integer answer
+            st.success(f"🎉 Correct! The limit is **a**. Nice work.")
+        else:
+            st.success(f"🎉 Correct! The limit is **1/{a}**. Nice work.")
     else:
         st.error("Not quite right. Try again, or check the explanation below for help.")
     with st.expander("📖 Show explanation"):
